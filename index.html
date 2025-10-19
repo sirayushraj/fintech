@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinTrack Pro</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'text-primary': '#2D2047',      // Dark Purple
+              'text-secondary': '#5F4C83',   // Medium-Dark Purple/Gray
+              'text-sidebar': '#D0C8E8',      // Light Lavender for sidebar text
+              'accent': '#ff80bf',           // Vibrant pink for highlights
+              'accent-secondary': '#7a52cc', // Darker medium purple
+              'glass': 'rgba(255, 255, 255, 0.1)',
+              'border': 'rgba(255, 255, 255, 0.2)',
+              'danger': '#e54848',           // Darker, more saturated red
+            },
+            keyframes: {
+              'fade-in-up': {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'glow': {
+                '0%, 100%': { boxShadow: '0 0 10px rgba(255,128,191,0.5)' },
+                '50%': { boxShadow: '0 0 20px rgba(255,128,191,0.9)' },
+              }
+            },
+            animation: {
+              'fade-in-up': 'fade-in-up 0.3s ease-out forwards',
+              'glow': 'glow 1.5s ease-in-out',
+            },
+            backdropBlur: {
+              xl: '20px',
+            }
+          },
+        },
+      }
+    </script>
+    
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://aistudiocdn.com/react@^19.2.0",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+        "react/": "https://aistudiocdn.com/react@^19.2.0/",
+        "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.4",
+        "@google/genai": "https://aistudiocdn.com/@google/genai@^1.25.0"
+      }
+    }
+    </script>
+    
+    <style>
+      body {
+        color: #2D2047; /* Default text color */
+      }
+      /* Custom Scrollbar Styling */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgba(72,61,139,0.5); /* Dark purple from theme */
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(255,182,193,0.8); /* Pink from theme */
+        border-radius: 10px;
+        border: 2px solid transparent;
+        background-clip: content-box;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(255,128,191,1);
+      }
+    </style>
+</head>
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
